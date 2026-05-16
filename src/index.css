@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+
+  --color-gdgf-navy: #01154c;
+  --color-gdgf-red: #e12d34;
+  --color-gdgf-orange: #f48e23;
+  --color-gdgf-blue: #237bcc;
+  --color-gdgf-green: #2db37c;
+
+  /* Theme overrides using logo colors */
+  --color-indigo-950: var(--color-gdgf-navy);
+  --color-indigo-900: color-mix(in srgb, var(--color-gdgf-navy) 90%, white);
+  --color-indigo-800: color-mix(in srgb, var(--color-gdgf-navy) 80%, white);
+  --color-indigo-700: var(--color-gdgf-blue);
+  --color-indigo-600: var(--color-gdgf-blue);
+  --color-indigo-500: color-mix(in srgb, var(--color-gdgf-blue) 90%, white);
+
+  --color-orange-600: color-mix(in srgb, var(--color-gdgf-orange) 90%, black);
+  --color-orange-500: var(--color-gdgf-orange);
+  --color-orange-400: color-mix(in srgb, var(--color-gdgf-orange) 90%, white);
+  --color-orange-100: color-mix(in srgb, var(--color-gdgf-orange) 15%, transparent);
+}
+
+body {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+}
