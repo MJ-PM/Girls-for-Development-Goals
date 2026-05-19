@@ -16,12 +16,12 @@ export function Resources() {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-4">
       {/* Header */}
-      <section className="col-span-1 md:col-span-12 bg-white text-indigo-950 rounded-3xl p-8 md:p-12 border border-slate-200 text-center">
+      <section className="col-span-1 md:col-span-12 bg-white text-indigo-950 rounded-3xl p-6 md:p-8 border border-slate-200 text-center">
         <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold">Resource Hub</h1>
       </section>
 
       {/* Reports Section - Bento Box styled */}
-      <section className="col-span-1 md:col-span-12 bg-slate-100 rounded-3xl p-8 md:p-10 border border-slate-200">
+      <section className="col-span-1 md:col-span-12 bg-slate-100 rounded-3xl p-6 md:p-8 border border-slate-200">
          <h2 className="font-serif text-3xl font-bold text-indigo-950 mb-2">Annual Reports & Financials</h2>
          <p className="text-slate-500 text-xs mb-8 uppercase tracking-widest font-bold">Detailed breakdowns & Impact Analysis</p>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
@@ -45,7 +45,7 @@ export function Resources() {
       </section>
 
       {/* Blog & Newsletters */}
-      <section className="col-span-1 lg:col-span-7 bg-white rounded-3xl p-8 md:p-10 border border-slate-200">
+      <section className="col-span-1 lg:col-span-7 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
          <h2 className="font-serif text-3xl font-bold text-indigo-950 mb-2">Newsletters & Articles</h2>
          <p className="text-slate-500 text-xs mb-8 uppercase tracking-widest font-bold">Advocacy & Thought Leadership</p>
          <div className="grid grid-cols-1 gap-4">
@@ -65,7 +65,7 @@ export function Resources() {
       </section>
 
       {/* Newsletter Signup */}
-      <section className="col-span-1 lg:col-span-5 bg-indigo-950 rounded-3xl p-8 md:p-10 border border-slate-200 flex flex-col justify-center text-white relative overflow-hidden">
+      <section className="col-span-1 lg:col-span-5 bg-indigo-950 rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col justify-center text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-600 rounded-full blur-3xl opacity-30 -mr-20 -mt-20"></div>
         <div className="relative z-10 w-full max-w-sm mx-auto">
           <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4">Join Our Global Network</h2>

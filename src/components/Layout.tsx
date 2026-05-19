@@ -5,8 +5,7 @@ import { useState } from "react";
 import { cn } from "../utils";
 
 const NAV_LINKS = [
-  { name: "Overview", path: "/" },
-  { name: "Governance", path: "/about" },
+  { name: "About us", path: "/about" },
   { name: "Projects", path: "/projects" },
   { name: "Resources", path: "/resources" },
 ];
@@ -17,10 +16,10 @@ export function Layout() {
   return (
     <div className="flex min-h-screen flex-col bg-slate-50 text-slate-900 font-sans p-4 md:p-6 gap-4">
       {/* Header */}
-      <header className="sticky top-0 z-50 h-16 bg-white border border-slate-200 rounded-3xl shrink-0 shadow-sm max-w-7xl mx-auto w-full">
+      <header className="sticky top-0 z-50 h-20 bg-white border border-slate-200 rounded-3xl shrink-0 shadow-sm max-w-7xl mx-auto w-full">
         <div className="px-6 h-full flex items-center justify-between">
           <NavLink to="/" className="flex items-center">
-            <img src="/gdgf-logo.png" alt="GDGF Logo" className="h-16 w-auto object-contain" />
+            <img src="/logo2.jpeg" alt="GDGF Logo" className="h-16 md:h-20 w-auto object-contain" />
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
@@ -69,7 +68,7 @@ export function Layout() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-indigo-800/50 pb-12">
           <div className="md:col-span-2">
             <div className="mb-4">
-              <img src="/gdgf-logo.png" alt="GDGF Logo" className="h-16 w-auto object-contain" />
+              <img src="/logo2.jpeg" alt="GDGF Logo" className="h-20 w-auto object-contain rounded-md" />
             </div>
             <p className="text-indigo-200 text-sm leading-relaxed mb-6 max-w-xs">
               Empowering the next generation by providing access to education, mentorship, healthcare, and economic opportunities to create a more inclusive world.

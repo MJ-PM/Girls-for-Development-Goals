@@ -18,18 +18,18 @@ export function About() {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-4">
       {/* Header Bento Box */}
-      <section className="col-span-1 md:col-span-12 bg-indigo-950 text-white rounded-3xl p-8 md:p-12 border border-slate-200 relative overflow-hidden">
+      <section className="col-span-1 md:col-span-12 bg-indigo-950 text-white rounded-3xl p-6 md:p-8 border border-slate-200 relative overflow-hidden">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-500 rounded-full blur-3xl opacity-20 -mr-20 -mt-20"></div>
         <div className="relative z-10 w-full max-w-4xl mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-6">Institutional Governance</h1>
-          <p className="text-indigo-200 text-lg md:text-xl lg:px-12 mx-auto">
+          <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4 md:mb-6">About Us</h1>
+          <p className="text-indigo-200 text-base md:text-lg lg:px-12 mx-auto">
              Girls for Development Goals Foundation is a registered non-governmental, non-partisan, and nonprofit organization that drives positive change through impactful community development initiatives.
           </p>
         </div>
       </section>
 
       {/* Mission & Vision Grid */}
-      <section className="col-span-1 md:col-span-6 bg-white rounded-3xl p-8 md:p-12 border border-slate-200">
+      <section className="col-span-1 md:col-span-6 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
          <div className="text-orange-500 font-serif italic text-sm font-semibold mb-3">Purpose</div>
          <h2 className="font-bold font-serif text-3xl text-indigo-950 mb-4">Our Mission</h2>
          <p className="text-slate-600 text-lg leading-relaxed">
@@ -37,7 +37,7 @@ export function About() {
          </p>
       </section>
 
-      <section className="col-span-1 md:col-span-6 bg-white rounded-3xl p-8 md:p-12 border border-slate-200">
+      <section className="col-span-1 md:col-span-6 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
          <div className="text-indigo-500 font-serif italic text-sm font-semibold mb-3">Future</div>
          <h2 className="font-bold font-serif text-3xl text-indigo-950 mb-4">Our Vision</h2>
          <p className="text-slate-600 text-[15px] sm:text-base leading-relaxed">
@@ -46,7 +46,7 @@ export function About() {
       </section>
 
       {/* Aims & Objectives */}
-      <section className="col-span-1 md:col-span-12 bg-slate-100 rounded-3xl p-8 md:p-12 border border-slate-200">
+      <section className="col-span-1 md:col-span-12 bg-slate-100 rounded-3xl p-6 md:p-8 border border-slate-200">
         <h2 className="font-serif text-3xl md:text-4xl font-bold text-indigo-950 mb-8 pb-6 border-b border-slate-200">Aims and Objectives</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {aims.map((aim, idx) => (
@@ -61,8 +61,8 @@ export function About() {
       </section>
 
       {/* Team & Advisory Board */}
-      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-8 md:p-12 border border-slate-200">
-        <div className="mb-12 text-center max-w-2xl mx-auto">
+      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
+        <div className="mb-10 text-center max-w-2xl mx-auto">
           <span className="text-orange-500 font-bold tracking-widest text-xs uppercase mb-3 block">Leadership</span>
           <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-indigo-950 mb-6">Global Advisory Board</h2>
           <p className="text-slate-600 text-base leading-relaxed">

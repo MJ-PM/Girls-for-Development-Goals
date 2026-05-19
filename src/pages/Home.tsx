@@ -6,7 +6,7 @@ export function Home() {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-4">
       {/* Hero Section */}
-      <section className="col-span-1 md:col-span-7 bg-white rounded-3xl p-8 md:p-10 border border-slate-200 flex flex-col justify-center relative overflow-hidden order-1 lg:min-h-[480px]">
+      <section className="col-span-1 md:col-span-7 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col justify-center relative overflow-hidden order-1 lg:min-h-[400px]">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full blur-2xl opacity-50 -mr-20 -mt-20"></div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative z-10 w-full flex-grow flex flex-col justify-center">
           <span className="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">Girls for Development Goals Foundation</span>
@@ -29,7 +29,7 @@ export function Home() {
       </section>
 
       {/* Short CTA */}
-      <section className="col-span-1 md:col-span-5 bg-indigo-900 rounded-3xl p-8 text-white flex flex-col justify-center order-2 lg:min-h-[480px]">
+      <section className="col-span-1 md:col-span-5 bg-indigo-900 rounded-3xl p-6 md:p-8 text-white flex flex-col justify-center order-2 lg:min-h-[400px]">
         <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 leading-tight">Join the Movement for Generational Impact</h2>
         <p className="text-indigo-200 text-base mb-8 max-w-sm">We welcome strategic partnerships, grants, and dedicated volunteers to expand our reach worldwide.</p>
         <Link to="/contact" className="w-fit px-8 py-4 bg-white text-indigo-900 font-bold uppercase tracking-widest hover:bg-slate-100 rounded-xl transition-colors text-xs mt-auto inline-flex items-center justify-center">
@@ -39,34 +39,34 @@ export function Home() {
 
       {/* Impact Tracker */}
       {[
-        { number: "2400+", label: "Girls Empowered", color: "text-indigo-300", bg: "bg-indigo-900", icon: <Heart className="w-8 h-8" /> },
-        { number: "50,000+", label: "Pads Distributed", color: "text-orange-500", bg: "bg-white border-slate-200" },
-        { number: "15+", label: "Communities Reached", color: "text-slate-400", bg: "bg-white border-slate-200" },
-        { number: "100%", label: "Commitment", color: "text-green-500", bg: "bg-white border-slate-200" },
+        { number: "2400+", label: "Girls Empowered", color: "text-indigo-300", bg: "bg-indigo-900", icon: <Heart className="w-5 h-5" /> },
+        { number: "50,000+", label: "Pads Distributed", color: "text-orange-500", bg: "bg-white border-slate-200", icon: <Activity className="w-5 h-5" /> },
+        { number: "15+", label: "Communities", color: "text-slate-400", bg: "bg-white border-slate-200", icon: <Globe className="w-5 h-5" /> },
+        { number: "100%", label: "Commitment", color: "text-green-500", bg: "bg-white border-slate-200", icon: <Heart className="w-5 h-5" /> },
       ].map((stat, i) => (
-        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.6 }} className={`col-span-1 border md:col-span-3 rounded-3xl p-6 flex flex-col justify-between order-3 min-h-[180px] ${stat.bg} ${stat.bg.includes('bg-indigo') ? 'text-white' : 'text-indigo-950'}`}>
-          <div className={`${stat.color} font-serif italic text-sm font-semibold mb-4`}>{stat.icon}</div>
+        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1, duration: 0.6 }} className={`col-span-1 border md:col-span-3 rounded-2xl p-4 flex flex-col justify-between order-3 min-h-[110px] ${stat.bg} ${stat.bg.includes('bg-indigo') ? 'text-white' : 'text-indigo-950'}`}>
+          <div className={`${stat.color} font-serif italic text-sm font-semibold mb-2`}>{stat.icon}</div>
           <div>
-            <div className="font-serif text-3xl md:text-4xl font-bold">{stat.number}</div>
-            <div className={`text-xs uppercase font-bold tracking-wider mt-1 ${stat.bg.includes('bg-indigo') ? 'text-indigo-200' : 'text-slate-500'}`}>{stat.label}</div>
+            <div className="font-serif text-xl md:text-2xl font-bold">{stat.number}</div>
+            <div className={`text-[10px] uppercase font-bold tracking-wider mt-1 ${stat.bg.includes('bg-indigo') ? 'text-indigo-200' : 'text-slate-500'}`}>{stat.label}</div>
           </div>
         </motion.div>
       ))}
 
       {/* Pillars Section */}
       {[
-        { icon: <Heart className="w-6 h-6" />, title: "Health & Well-being", sdg: "SDG 3", color: "bg-green-100 text-green-700", desc: "Menstrual hygiene management, SRHR, and nutrition." },
-        { icon: <BookOpen className="w-6 h-6" />, title: "Quality Education", sdg: "SDG 4", color: "bg-indigo-100 text-indigo-700", desc: "Access to education, scholarships, and digital literacy." },
-        { icon: <Globe className="w-6 h-6" />, title: "Gender Equality", sdg: "SDG 5", color: "bg-orange-100 text-orange-700", desc: "Advocacy for rights, policy engagement, and leadership." },
-        { icon: <Activity className="w-6 h-6" />, title: "Economic Growth", sdg: "SDG 8", color: "bg-blue-100 text-blue-700", desc: "Skills training, employability, and entrepreneurship." }
+        { icon: <Heart className="w-5 h-5" />, title: "Health & Well-being", sdg: "SDG 3", color: "bg-green-100 text-green-700", desc: "Menstrual hygiene management, SRHR, and nutrition." },
+        { icon: <BookOpen className="w-5 h-5" />, title: "Quality Education", sdg: "SDG 4", color: "bg-indigo-100 text-indigo-700", desc: "Access to education, scholarships, and digital literacy." },
+        { icon: <Globe className="w-5 h-5" />, title: "Gender Equality", sdg: "SDG 5", color: "bg-orange-100 text-orange-700", desc: "Advocacy for rights, policy engagement, and leadership." },
+        { icon: <Activity className="w-5 h-5" />, title: "Economic Growth", sdg: "SDG 8", color: "bg-blue-100 text-blue-700", desc: "Skills training, employability, and entrepreneurship." }
       ].map((pillar, i) => (
-        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="col-span-1 md:col-span-6 lg:col-span-3 bg-slate-100 rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col order-4 hover:border-indigo-300 transition-colors">
-          <div className="flex justify-between items-start mb-6">
-             <span className={`text-[10px] font-bold px-2 py-0.5 rounded uppercase ${pillar.color}`}>{pillar.sdg}</span>
+        <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }} className="col-span-1 md:col-span-6 lg:col-span-3 bg-slate-100 rounded-2xl p-4 md:p-5 border border-slate-200 flex flex-col order-4 hover:border-indigo-300 transition-colors">
+          <div className="flex justify-between items-start mb-4">
+             <span className={`text-[9px] font-bold px-2 py-0.5 rounded uppercase ${pillar.color}`}>{pillar.sdg}</span>
              <div className="text-slate-400">{pillar.icon}</div>
           </div>
-          <h3 className="font-bold text-lg text-indigo-950 mb-2 mt-auto font-serif">{pillar.title}</h3>
-          <p className="text-slate-600 text-sm leading-relaxed">{pillar.desc}</p>
+          <h3 className="font-bold text-base text-indigo-950 mb-1 mt-auto font-serif">{pillar.title}</h3>
+          <p className="text-slate-600 text-xs leading-relaxed">{pillar.desc}</p>
         </motion.div>
       ))}
     </div>

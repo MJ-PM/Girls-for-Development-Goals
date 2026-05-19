@@ -4,7 +4,7 @@ export function Contact() {
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-4">
       {/* Header */}
-      <section className="col-span-1 md:col-span-12 bg-white text-indigo-950 rounded-3xl p-8 md:p-12 border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-8">
+      <section className="col-span-1 md:col-span-12 bg-white text-indigo-950 rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-8">
         <div className="max-w-xl text-center md:text-left">
           <span className="text-orange-500 font-bold tracking-widest text-xs uppercase mb-4 block">Get Involved</span>
           <h1 className="font-serif text-4xl md:text-5xl lg:text-6xl font-bold mb-4">Engage With Us</h1>
@@ -24,7 +24,7 @@ export function Contact() {
       </section>
 
       {/* Global Operations / Contact Info */}
-      <section className="col-span-1 md:col-span-5 bg-indigo-950 text-white rounded-3xl p-8 md:p-12 border border-slate-200">
+      <section className="col-span-1 md:col-span-5 bg-indigo-950 text-white rounded-3xl p-6 md:p-8 border border-slate-200">
          <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 text-orange-400">Global Operations</h2>
          <p className="text-indigo-200 text-base mb-12 leading-relaxed">
            For strategic synergies, financial audit requests, or program inquiries, reach out to our administration lines.
@@ -79,7 +79,7 @@ export function Contact() {
       </section>
 
       {/* Contact Form */}
-      <section className="col-span-1 md:col-span-7 bg-white rounded-3xl p-8 md:p-12 border border-slate-200">
+      <section className="col-span-1 md:col-span-7 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
          <h3 className="font-serif text-3xl font-bold text-indigo-950 mb-8">Send a Message</h3>
          <form className="space-y-6" onSubmit={e => e.preventDefault()}>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
