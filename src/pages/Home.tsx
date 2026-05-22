@@ -9,7 +9,6 @@ export function Home() {
       <section className="col-span-1 md:col-span-7 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 flex flex-col justify-center relative overflow-hidden order-1 lg:min-h-[400px]">
         <div className="absolute top-0 right-0 w-64 h-64 bg-orange-100 rounded-full blur-2xl opacity-50 -mr-20 -mt-20"></div>
         <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="relative z-10 w-full flex-grow flex flex-col justify-center">
-          <span className="text-orange-600 font-bold tracking-widest text-xs uppercase mb-4 block">Girls for Development Goals Foundation</span>
           <h1 className="font-serif text-5xl md:text-6xl font-bold text-indigo-950 leading-tight mb-6">
             Shaping the Future <br className="hidden lg:block"/>
             Through <span className="italic">Empowerment</span>.
@@ -21,9 +20,9 @@ export function Home() {
             <Link to="/contact" className="bg-orange-500 text-white px-6 py-4 rounded-xl font-bold text-sm shadow-lg shadow-orange-200 hover:bg-orange-600 transition-colors flex items-center justify-center gap-2 group">
               Partner With Us <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
             </Link>
-            <Link to="/resources" className="bg-slate-100 text-slate-800 px-6 py-4 rounded-xl font-bold text-sm border border-slate-200 hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
+            <a href="/Girls4DevGoals%20Annual%20Report.pdf" target="_blank" rel="noopener noreferrer" className="bg-slate-100 text-slate-800 px-6 py-4 rounded-xl font-bold text-sm border border-slate-200 hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
               Read Annual Report <Download className="w-4 h-4" />
-            </Link>
+            </a>
           </div>
         </motion.div>
       </section>
@@ -40,7 +39,7 @@ export function Home() {
       {/* Impact Tracker */}
       {[
         { number: "2400+", label: "Girls Empowered", color: "text-indigo-300", bg: "bg-indigo-900", icon: <Heart className="w-5 h-5" /> },
-        { number: "50,000+", label: "Pads Distributed", color: "text-orange-500", bg: "bg-white border-slate-200", icon: <Activity className="w-5 h-5" /> },
+        { number: "800+", label: "Products Distributed", subtext: "500+ disposable pads • 300+ menstrual cups", color: "text-orange-500", bg: "bg-white border-slate-200", icon: <Activity className="w-5 h-5" /> },
         { number: "15+", label: "Communities", color: "text-slate-400", bg: "bg-white border-slate-200", icon: <Globe className="w-5 h-5" /> },
         { number: "100%", label: "Commitment", color: "text-green-500", bg: "bg-white border-slate-200", icon: <Heart className="w-5 h-5" /> },
       ].map((stat, i) => (
@@ -49,6 +48,7 @@ export function Home() {
           <div>
             <div className="font-serif text-xl md:text-2xl font-bold">{stat.number}</div>
             <div className={`text-[10px] uppercase font-bold tracking-wider mt-1 ${stat.bg.includes('bg-indigo') ? 'text-indigo-200' : 'text-slate-500'}`}>{stat.label}</div>
+            {stat.subtext && <div className={`text-[9px] font-bold mt-1.5 ${stat.bg.includes('bg-indigo') ? 'text-indigo-300' : 'text-slate-400/80'}`}>{stat.subtext}</div>}
           </div>
         </motion.div>
       ))}

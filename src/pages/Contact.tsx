@@ -62,16 +62,12 @@ export function Contact() {
                 <Globe className="w-6 h-6"/>
               </div>
               <div>
-                <h4 className="font-bold uppercase tracking-widest text-[10px] text-indigo-400 mb-1.5">Liaison Offices</h4>
+                <h4 className="font-bold uppercase tracking-widest text-[10px] text-indigo-400 mb-1.5">Liaison Office</h4>
                 <address className="not-italic text-indigo-100 text-sm leading-relaxed mb-4">
-                  No. 12, Yari House, Emir Haruna,<br/>
-                  Near Ajala Motors, Birnin-Kebbi,<br/>
-                  Kebbi State, Nigeria.
-                </address>
-                <div className="h-px w-12 bg-indigo-800 mb-4"></div>
-                <address className="not-italic text-indigo-100 text-sm leading-relaxed">
-                  26 E.C Odilison Close, GRA,<br/>
-                  Asaba, Delta State, Nigeria.
+                  No 13 Ochukwu Street, off Globus Bank,<br/>
+                  Core Area, Okpanam Road.<br/>
+                  Asaba, Delta State.<br/>
+                  Nigeria.
                 </address>
               </div>
             </div>

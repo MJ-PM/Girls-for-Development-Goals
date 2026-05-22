@@ -18,8 +18,11 @@ export function Layout() {
       {/* Header */}
       <header className="sticky top-0 z-50 h-20 bg-white border border-slate-200 rounded-3xl shrink-0 shadow-sm max-w-7xl mx-auto w-full">
         <div className="px-6 h-full flex items-center justify-between">
-          <NavLink to="/" className="flex items-center">
-            <img src="/logo2.jpeg" alt="GDGF Logo" className="h-16 md:h-20 w-auto object-contain" />
+          <NavLink to="/" className="flex items-center gap-3">
+            <img src="/logo2.jpeg" alt="GDGF Logo" className="h-12 md:h-14 w-auto object-contain rounded-md" />
+            <span className="font-serif font-bold text-indigo-950 uppercase text-xs md:text-sm tracking-wide max-w-[160px] md:max-w-[200px] leading-tight">
+              Girls for Development Goals Foundation
+            </span>
           </NavLink>
 
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-slate-600">
@@ -67,8 +70,11 @@ export function Layout() {
       <footer className="bg-indigo-950 text-white pt-16 pb-8 px-8 rounded-3xl mt-4 max-w-7xl mx-auto w-full">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 border-b border-indigo-800/50 pb-12">
           <div className="md:col-span-2">
-            <div className="mb-4">
-              <img src="/logo2.jpeg" alt="GDGF Logo" className="h-20 w-auto object-contain rounded-md" />
+            <div className="mb-4 flex items-center gap-3">
+              <img src="/logo2.jpeg" alt="GDGF Logo" className="h-14 w-auto object-contain rounded-md bg-white p-1" />
+              <span className="font-serif font-bold text-indigo-200 uppercase text-xs md:text-sm tracking-wide max-w-[200px] leading-tight">
+                Girls for Development Goals Foundation
+              </span>
             </div>
             <p className="text-indigo-200 text-sm leading-relaxed mb-6 max-w-xs">
               Empowering the next generation by providing access to education, mentorship, healthcare, and economic opportunities to create a more inclusive world.

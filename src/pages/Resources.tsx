@@ -2,15 +2,15 @@ import { FileText, ArrowUpRight, Send } from "lucide-react";
 
 export function Resources() {
   const reports = [
-    { year: "2024", title: "GDGF Annual Impact Report", size: "2.4 MB" },
-    { year: "2023", title: "Strategic Retrospective", size: "1.8 MB" },
-    { year: "2022", title: "Foundation Initial Audit", size: "1.1 MB" },
+    { year: "2024", title: "GDGF Annual Impact Report", size: "2.4 MB", href: "/Girls4DevGoals Annual Report.pdf" },
+    { year: "2023", title: "Strategic Retrospective", size: "1.8 MB", href: "#" },
+    { year: "2022", title: "Foundation Initial Audit", size: "1.1 MB", href: "#" },
   ];
 
   const articles = [
-    { date: "April 2025", title: "1st Quarter 2025 Newsletter", desc: "An exclusive look at our successful fundraising dinner in Innsbruck and celebration of essay competition winners." },
-    { date: "March 2025", title: "Celebrating Women's Voices", desc: "Global stories of empowerment from Nigeria, Uganda, Sweden, and Italy recorded for IWD." },
-    { date: "March 2024", title: "Inspire Inclusion: Supporting Female Farmers", desc: "A reflection on our initiative equipping women farmers in Obiaruku to combat food insecurity." }
+    { date: "April 2025", title: "1st Quarter 2025 Newsletter", desc: "An exclusive look at our successful fundraising dinner in Innsbruck and celebration of essay competition winners.", href: "/1st Quarter 2025 Newsletter.pdf" },
+    { date: "March 2025", title: "Celebrating Women's Voices", desc: "Global stories of empowerment from Nigeria, Uganda, Sweden, and Italy recorded for IWD.", href: "#" },
+    { date: "March 2024", title: "Inspire Inclusion: Supporting Female Farmers", desc: "A reflection on our initiative equipping women farmers in Obiaruku to combat food insecurity.", href: "#" }
   ];
 
   return (
@@ -26,7 +26,7 @@ export function Resources() {
          <p className="text-slate-500 text-xs mb-8 uppercase tracking-widest font-bold">Detailed breakdowns & Impact Analysis</p>
          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {reports.map((report, idx) => (
-            <div key={idx} className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 flex items-center gap-6 hover:shadow-lg transition-shadow group cursor-pointer hover:border-indigo-300">
+            <a key={idx} href={report.href} target="_blank" rel="noopener noreferrer" className="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 flex items-center gap-6 hover:shadow-lg transition-shadow group cursor-pointer hover:border-indigo-300">
               <div className="w-20 h-28 bg-slate-50 shadow-md border border-slate-200 flex-shrink-0 flex flex-col p-2 items-center justify-center relative">
                 <div className="w-full h-1.5 bg-indigo-900 absolute top-0 left-0"></div>
                 <div className="text-[7px] font-bold text-center leading-tight mt-1 text-slate-400">ANNUAL<br/>REPORT</div>
@@ -39,7 +39,7 @@ export function Resources() {
                   PDF • {report.size}
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -50,7 +50,7 @@ export function Resources() {
          <p className="text-slate-500 text-xs mb-8 uppercase tracking-widest font-bold">Advocacy & Thought Leadership</p>
          <div className="grid grid-cols-1 gap-4">
            {articles.map((article, idx) => (
-             <div key={idx} className="p-6 border border-slate-200 bg-slate-50 rounded-2xl group hover:border-indigo-300 transition-colors cursor-pointer hover:bg-white hover:shadow-sm">
+             <a key={idx} href={article.href} target="_blank" rel="noopener noreferrer" className="block p-6 border border-slate-200 bg-slate-50 rounded-2xl group hover:border-indigo-300 transition-colors cursor-pointer hover:bg-white hover:shadow-sm">
                <div className="flex justify-between items-start mb-3">
                  <span className="text-[10px] font-bold px-2.5 py-1 bg-orange-100 text-orange-700 rounded-md uppercase tracking-wider">{article.date}</span>
                </div>
@@ -59,7 +59,7 @@ export function Resources() {
                <span className="text-xs font-bold text-indigo-600 uppercase flex items-center gap-1 tracking-wider">
                  Read <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"/>
                </span>
-             </div>
+             </a>
            ))}
          </div>
       </section>
