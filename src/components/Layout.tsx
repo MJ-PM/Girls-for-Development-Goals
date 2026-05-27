@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 import { useState } from "react";
 import { cn } from "../utils";
 
@@ -96,8 +96,22 @@ export function Layout() {
             </address>
           </div>
         </div>
-        <div className="pt-8 flex flex-col md:flex-row items-center justify-center text-xs text-indigo-400 gap-4">
+        <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-indigo-400 gap-4">
           <p>&copy; {new Date().getFullYear()} Girls for Development Goals Foundation.</p>
+          <div className="flex gap-4">
+            <a href="https://www.facebook.com/share/1DZqsQNKEZ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <Facebook size={18} />
+            </a>
+            <a href="https://www.instagram.com/girls4developmentgoals?igsh=MTNyMGpsemZmNWdidQ==" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <Instagram size={18} />
+            </a>
+            <a href="https://www.linkedin.com/company/girls-for-development-goals-foundation/" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <Linkedin size={18} />
+            </a>
+            <a href="https://x.com/ghefoundationng?s=21&t=IOcRUAsAu7hWx2qngIju2g" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+              <Twitter size={18} />
+            </a>
+          </div>
         </div>
       </footer>
     </div>

@@ -1,4 +1,4 @@
-import { MapPin, Mail, Globe, ArrowRight } from "lucide-react";
+import { MapPin, Mail, Globe, ArrowRight, Facebook, Instagram, Linkedin, Twitter } from "lucide-react";
 
 export function Contact() {
   return (
@@ -69,6 +69,29 @@ export function Contact() {
                   Asaba, Delta State.<br/>
                   Nigeria.
                 </address>
+              </div>
+            </div>
+
+            <div className="flex gap-5 items-start mt-4 pt-6 border-t border-indigo-800/50">
+              <div className="p-3 bg-indigo-900 border border-indigo-800 text-indigo-300 rounded-xl h-fit">
+                <Facebook className="w-6 h-6" />
+              </div>
+              <div>
+                <h4 className="font-bold uppercase tracking-widest text-[10px] text-indigo-400 mb-2">Social Channels</h4>
+                <div className="flex gap-4 items-center">
+                  <a href="https://www.facebook.com/share/1DZqsQNKEZ/?mibextid=wwXIfr" target="_blank" rel="noopener noreferrer" className="text-indigo-200 hover:text-orange-400 transition-colors">
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.instagram.com/girls4developmentgoals?igsh=MTNyMGpsemZmNWdidQ==" target="_blank" rel="noopener noreferrer" className="text-indigo-200 hover:text-orange-400 transition-colors">
+                    <Instagram className="w-5 h-5" />
+                  </a>
+                  <a href="https://www.linkedin.com/company/girls-for-development-goals-foundation/" target="_blank" rel="noopener noreferrer" className="text-indigo-200 hover:text-orange-400 transition-colors">
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                  <a href="https://x.com/ghefoundationng?s=21&t=IOcRUAsAu7hWx2qngIju2g" target="_blank" rel="noopener noreferrer" className="text-indigo-200 hover:text-orange-400 transition-colors">
+                    <Twitter className="w-5 h-5" />
+                  </a>
+                </div>
               </div>
             </div>
          </div>
