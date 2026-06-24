@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
-import { ArrowRight, Filter } from "lucide-react";
+import { ArrowRight, Filter, ChevronLeft, ChevronRight } from "lucide-react";
 import { cn } from "../utils";
 
 const PROJECTS = [
@@ -18,8 +18,18 @@ const PROJECTS = [
 
 const CATEGORIES = ["All", "Education", "Healthcare", "Tech", "Economic Growth", "Community"];
 
+const GALLERY_PHOTOS = [
+  "/Pic 1.jpeg",
+  "/Pic 2.jpeg",
+  "/Pic 3.jpeg",
+  "/Pic 4.jpeg",
+  "/Pic 5.jpeg",
+  "/Pic 6.jpeg"
+];
+
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
+  const [activePhotoIndex, setActivePhotoIndex] = useState(0);
   const [showAll, setShowAll] = useState(false);
 
   const filteredProjects = activeCategory === "All" ? PROJECTS : PROJECTS.filter(p => p.category === activeCategory);
@@ -33,6 +43,65 @@ export function Projects() {
         <p className="text-slate-600 max-w-2xl mx-auto text-base md:text-lg lg:text-xl font-light">
           A transparent overview of our concrete impact and community programs across sub-Saharan Africa.
         </p>
+      </section>
+
+      {/* Visual Gallery Highlights Section */}
+      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
+        {/* Active Photo Display with absolute controls */}
+        <div className="relative rounded-2xl overflow-hidden aspect-[4/3] sm:aspect-[16/10] md:aspect-[21/9] w-full border border-slate-200 bg-slate-900 shadow-md group">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activePhotoIndex}
+              initial={{ opacity: 0, x: 40, filter: "blur(4px)" }}
+              animate={{ opacity: 1, x: 0, filter: "blur(0px)" }}
+              exit={{ opacity: 0, x: -40, filter: "blur(4px)" }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 w-full h-full"
+            >
+              <img
+                src={GALLERY_PHOTOS[activePhotoIndex]}
+                alt={`GDGF Field Action Photograph ${activePhotoIndex + 1}`}
+                className="w-full h-full object-cover select-none"
+                draggable={false}
+              />
+            </motion.div>
+          </AnimatePresence>
+
+          {/* Left Arrow Button */}
+          <button
+            onClick={() => setActivePhotoIndex((prev) => (prev === 0 ? GALLERY_PHOTOS.length - 1 : prev - 1))}
+            aria-label="Previous Photo"
+            className="absolute left-3 md:left-6 top-1/2 -translate-y-1/2 p-2.5 md:p-3 rounded-full bg-white/90 hover:bg-white text-indigo-950 shadow-md transition-all hover:scale-105 active:scale-95 z-20 backdrop-blur-sm"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+
+          {/* Right Arrow Button */}
+          <button
+            onClick={() => setActivePhotoIndex((prev) => (prev === GALLERY_PHOTOS.length - 1 ? 0 : prev + 1))}
+            aria-label="Next Photo"
+            className="absolute right-3 md:right-6 top-1/2 -translate-y-1/2 p-2.5 md:p-3 rounded-full bg-white/90 hover:bg-white text-indigo-950 shadow-md transition-all hover:scale-105 active:scale-95 z-20 backdrop-blur-sm"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
+
+          {/* Indicators / Progress Dot HUD Overlay */}
+          <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2 z-20 bg-black/40 px-3 py-1.5 rounded-full backdrop-blur-sm">
+            {GALLERY_PHOTOS.map((_, idx) => (
+              <button
+                key={idx}
+                onClick={() => setActivePhotoIndex(idx)}
+                aria-label={`Go to photo ${idx + 1}`}
+                className={cn(
+                  "w-1.5 h-1.5 rounded-full transition-all duration-300",
+                  activePhotoIndex === idx
+                    ? "bg-white scale-125 px-2"
+                    : "bg-white/40 hover:bg-white/80"
+                )}
+              />
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* Project Filterable Grid */}

@@ -27,13 +27,26 @@ export function Home() {
         </motion.div>
       </section>
 
-      {/* Short CTA */}
-      <section className="col-span-1 md:col-span-5 bg-indigo-900 rounded-3xl p-6 md:p-8 text-white flex flex-col justify-center order-2 lg:min-h-[400px]">
-        <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 leading-tight">Join the Movement for Generational Impact</h2>
-        <p className="text-indigo-200 text-base mb-8 max-w-sm">We welcome strategic partnerships, grants, and dedicated volunteers to expand our reach worldwide.</p>
-        <Link to="/contact" className="w-fit px-8 py-4 bg-white text-indigo-900 font-bold uppercase tracking-widest hover:bg-slate-100 rounded-xl transition-colors text-xs mt-auto inline-flex items-center justify-center">
-          Become a Partner
-        </Link>
+      {/* Short CTA with Hero Image Background */}
+      <section 
+        className="col-span-1 md:col-span-5 rounded-3xl p-6 md:p-8 text-white flex flex-col justify-center order-2 lg:min-h-[400px] relative overflow-hidden group shadow-md"
+        style={{
+          backgroundImage: "linear-gradient(to bottom, rgba(30, 27, 75, 0.85), rgba(30, 27, 75, 0.95)), url('/Pic 1.jpeg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center"
+        }}
+      >
+        <div className="absolute inset-0 bg-indigo-950/20 group-hover:bg-indigo-950/10 transition-colors duration-500"></div>
+        <div className="relative z-10 flex flex-col h-full justify-between">
+          <div>
+            <span className="text-orange-400 font-mono text-[10px] font-bold uppercase tracking-widest block mb-3">FEATURED SPOTLIGHT</span>
+            <h2 className="font-serif text-3xl md:text-4xl font-bold mb-4 leading-tight">Join the Movement for Generational Impact</h2>
+            <p className="text-indigo-200 text-sm md:text-base mb-8 max-w-sm leading-relaxed">We welcome strategic partnerships, grants, and dedicated volunteers to expand our reach worldwide.</p>
+          </div>
+          <Link to="/contact" className="w-fit px-8 py-4 bg-orange-500 text-white font-bold uppercase tracking-widest hover:bg-orange-600 rounded-xl transition-all text-xs inline-flex items-center justify-center shadow-lg shadow-indigo-950/50 hover:scale-105 active:scale-95 duration-200 mt-auto">
+            Become a Partner
+          </Link>
+        </div>
       </section>
 
       {/* Impact Tracker */}
