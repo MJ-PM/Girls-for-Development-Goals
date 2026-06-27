@@ -1,6 +1,6 @@
 {
-  "name": "",
-  "description": "",
+  "name": "Girls for Development Goals Foundation",
+  "description": "An organization dedicated to girls and women empowerment, education, healthcare, and economic growth.",
   "requestFramePermissions": [],
-  "majorCapabilities": []
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
