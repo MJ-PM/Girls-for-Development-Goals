@@ -27,6 +27,44 @@ const GALLERY_PHOTOS = [
   "/Pic 6.jpeg"
 ];
 
+function FlyerImage({ baseName, alt }: { baseName: string; alt: string }) {
+  const extensions = [".jpeg", ".jpg", ".png", ".webp"];
+  const [extIndex, setExtIndex] = useState(0);
+  const [hasError, setHasError] = useState(false);
+
+  const src = `/${baseName}${extensions[extIndex]}`;
+
+  const handleError = () => {
+    if (extIndex < extensions.length - 1) {
+      setExtIndex(prev => prev + 1);
+    } else {
+      setHasError(true);
+    }
+  };
+
+  if (hasError) {
+    return (
+      <div className="w-full h-full bg-slate-100 flex flex-col items-center justify-center p-6 text-center border border-dashed border-slate-300 rounded-2xl">
+        <span className="text-indigo-400 text-[10px] font-mono font-bold tracking-widest mb-1">FLYER PREVIEW</span>
+        <span className="text-indigo-950 font-serif font-bold text-sm leading-tight">{alt}</span>
+        <p className="text-slate-400 text-[10px] mt-2 max-w-[200px]">
+          Please upload a flyer titled "{baseName}" (.jpeg, .jpg, or .png) in the root/public directory.
+        </p>
+      </div>
+    );
+  }
+
+  return (
+    <img
+      src={src}
+      alt={alt}
+      onError={handleError}
+      className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+      loading="lazy"
+    />
+  );
+}
+
 export function Projects() {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activePhotoIndex, setActivePhotoIndex] = useState(0);
@@ -100,6 +138,29 @@ export function Projects() {
                 )}
               />
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Upcoming Initiatives Section */}
+      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4 border-b border-slate-200 pb-5">
+          <div>
+            <span className="text-xs uppercase font-mono font-bold tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Coming Next</span>
+            <h2 className="font-serif text-3xl font-bold text-indigo-950 mt-3 mb-2">Upcoming Initiatives</h2>
+            <p className="text-slate-500 text-sm max-w-xl">Real flyers and info for our next major campaign. All the event details are displayed below.</p>
+          </div>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {/* Flyer 1 */}
+          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-[3/4] bg-slate-50 relative group">
+            <FlyerImage baseName="Upcoming 1" alt="Upcoming Project Flyer 1" />
+          </div>
+
+          {/* Flyer 2 */}
+          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-[3/4] bg-slate-50 relative group">
+            <FlyerImage baseName="Upcoming 2" alt="Upcoming Project Flyer 2" />
           </div>
         </div>
       </section>
