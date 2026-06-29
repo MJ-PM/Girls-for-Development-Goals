@@ -1,8 +1,18 @@
 import { motion } from "motion/react";
-import { ArrowRight, BookOpen, Heart, Activity, Globe, Download } from "lucide-react";
+import { ArrowRight, BookOpen, Heart, Activity, Globe, Download, Copy, Check } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
+import { triggerDonate } from "../utils";
 
 export function Home() {
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText("1016948001");
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
+
   return (
     <div className="w-full grid grid-cols-1 md:grid-cols-12 auto-rows-auto gap-4">
       {/* Hero Section */}
@@ -82,6 +92,117 @@ export function Home() {
           <p className="text-slate-600 text-xs leading-relaxed">{pillar.desc}</p>
         </motion.div>
       ))}
+
+      {/* Project Photos Grid Section */}
+      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200 order-5">
+        <div className="flex flex-col sm:flex-row justify-between items-start sm:items-end mb-6 gap-4">
+          <div>
+            <span className="text-xs uppercase font-mono font-bold tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Impact In Action</span>
+            <h2 className="font-serif text-3xl font-bold text-indigo-950 mt-3 mb-2">Our Field Work</h2>
+            <p className="text-slate-500 text-sm max-w-xl">Real snapshots showing our active projects, resource distribution, and community empowerment initiatives.</p>
+          </div>
+          <Link to="/projects" className="text-sm font-bold text-indigo-900 hover:text-orange-500 transition-colors inline-flex items-center gap-1.5 shrink-0 group">
+            View All Projects <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-4">
+          {[
+            { src: "/Pic 2.jpeg", alt: "GDGF Outreach Photograph 2" },
+            { src: "/Pic 3.jpeg", alt: "GDGF Outreach Photograph 3" },
+            { src: "/Pic 4.jpeg", alt: "GDGF Outreach Photograph 4" },
+            { src: "/Pic 5.jpeg", alt: "GDGF Outreach Photograph 5" },
+            { src: "/Pic 6.jpeg", alt: "GDGF Outreach Photograph 6" },
+          ].map((photo, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.08, duration: 0.5 }}
+              className="relative aspect-[3/4] sm:aspect-[4/5] rounded-2xl overflow-hidden border border-slate-100 bg-slate-50 shadow-sm group cursor-pointer"
+            >
+              <img
+                src={photo.src}
+                alt={photo.alt}
+                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                loading="lazy"
+              />
+              <div className="absolute inset-0 bg-indigo-950/20 group-hover:bg-indigo-950/0 transition-colors duration-300"></div>
+            </motion.div>
+          ))}
+        </div>
+      </section>
+
+      {/* Support / Bank Details Section */}
+      <section className="col-span-1 md:col-span-12 bg-gradient-to-br from-indigo-950 via-indigo-900 to-indigo-950 rounded-3xl p-6 md:p-8 text-white border border-indigo-800 shadow-xl flex flex-col lg:flex-row gap-8 items-center relative overflow-hidden order-6">
+        {/* Background Decorative Glow */}
+        <div className="absolute bottom-0 right-0 w-96 h-96 bg-orange-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div className="absolute top-0 left-0 w-96 h-96 bg-indigo-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+        <div className="flex-1 space-y-4 relative z-10">
+          <span className="text-xs font-mono font-bold uppercase tracking-widest text-orange-400">SUPPORT OUR WORK</span>
+          <h2 className="font-serif text-3xl md:text-4xl font-bold leading-tight">Every Contribution Empowers a Girl Child</h2>
+          <p className="text-indigo-200 text-sm md:text-base leading-relaxed max-w-xl">
+            Your generous support goes directly toward funding hygiene kits, school uniforms, educational scholarships, digital literacy toolkits, and community development programs. Together, we can break cycles of limitation and build future leaders.
+          </p>
+          <div className="pt-2">
+            <button
+              onClick={triggerDonate}
+              className="bg-orange-500 hover:bg-orange-600 text-white font-bold text-xs uppercase tracking-widest px-6 py-3.5 rounded-xl transition-all duration-200 inline-flex items-center gap-2 hover:scale-[1.02] active:scale-[0.98] shadow-md shadow-orange-950/30 cursor-pointer"
+            >
+              Support via Donation <Heart className="w-4 h-4 fill-white" />
+            </button>
+          </div>
+        </div>
+
+        {/* Banking Details Card */}
+        <div className="w-full lg:w-[400px] bg-white/10 backdrop-blur-md border border-white/15 rounded-2xl p-6 relative z-10 flex flex-col justify-between shadow-lg shrink-0">
+          <div>
+            <h3 className="text-xs font-mono tracking-wider text-orange-400 font-bold uppercase mb-4">DIRECT BANK TRANSFER</h3>
+            
+            <div className="space-y-4">
+              <div>
+                <span className="text-[10px] text-indigo-300 uppercase tracking-widest block font-bold">Bank Name</span>
+                <span className="text-base font-semibold text-white">Zenith Bank</span>
+              </div>
+              
+              <div>
+                <span className="text-[10px] text-indigo-300 uppercase tracking-widest block font-bold">Account Name</span>
+                <span className="text-base font-semibold text-white">Girls for Development Goals</span>
+              </div>
+
+              <div>
+                <span className="text-[10px] text-indigo-300 uppercase tracking-widest block font-bold">Account Number</span>
+                <div className="flex items-center justify-between gap-2 mt-1">
+                  <span className="text-xl md:text-2xl font-mono font-bold text-orange-300 tracking-wider">1016948001</span>
+                  <button 
+                    onClick={handleCopy}
+                    className="flex items-center gap-1 px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 active:bg-white/30 text-xs font-semibold text-white border border-white/10 transition-colors cursor-pointer"
+                  >
+                    {copied ? (
+                      <>
+                        <Check size={12} className="text-green-400" /> Copied
+                      </>
+                    ) : (
+                      <>
+                        <Copy size={12} /> Copy
+                      </>
+                    )}
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="mt-6 pt-4 border-t border-white/10">
+            <span className="text-[10px] text-indigo-200/80 leading-normal block text-center">
+              Please include "Donation" as your transfer reference. We appreciate your kindness!
+            </span>
+          </div>
+        </div>
+      </section>
     </div>
   );
 }
+
