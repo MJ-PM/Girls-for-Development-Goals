@@ -142,25 +142,144 @@ export function Projects() {
         </div>
       </section>
 
-      {/* Upcoming Initiatives Section */}
-      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-6 md:p-8 border border-slate-200">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-8 gap-4 border-b border-slate-200 pb-5">
-          <div>
-            <span className="text-xs uppercase font-mono font-bold tracking-widest text-orange-600 bg-orange-50 px-3 py-1 rounded-full">Coming Next</span>
-            <h2 className="font-serif text-3xl font-bold text-indigo-950 mt-3 mb-2">Upcoming Initiatives</h2>
-            <p className="text-slate-500 text-sm max-w-xl">Real flyers and info for our next major campaign. All the event details are displayed below.</p>
-          </div>
+      {/* Ongoing Project Section */}
+      <section className="col-span-1 md:col-span-12 bg-white rounded-3xl p-6 md:p-10 border border-slate-200 shadow-sm">
+        {/* Header */}
+        <div className="border-b border-slate-200 pb-6 mb-8">
+          <span className="text-xs uppercase font-mono font-bold tracking-widest text-orange-600 bg-orange-50 border border-orange-200/60 px-3.5 py-1.5 rounded-full inline-block mb-3">
+            Ongoing Project
+          </span>
+          <h2 className="font-serif text-2xl md:text-4xl font-bold text-indigo-950 leading-tight">
+            Empowering 100+ Girls in Abraka with Sustainable Period Care
+          </h2>
+          <p className="text-indigo-900 font-medium text-base md:text-lg mt-3 max-w-3xl leading-relaxed">
+            Girls for Development Goals Foundation partners with The Cup Foundation and Lunette to put dignity, health, and the environment back into the hands of young women.
+          </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-          {/* Flyer 1 */}
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-[3/4] bg-slate-50 relative group">
-            <FlyerImage baseName="Upcoming 1" alt="Upcoming Project Flyer 1" />
+        {/* Content Layout */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          {/* Left Column: Major Campaign Flyer */}
+          <div className="lg:col-span-5 flex flex-col items-center lg:sticky lg:top-24">
+            <div className="w-full rounded-2xl overflow-hidden border border-slate-200 shadow-xl bg-slate-900 group relative">
+              <img
+                src="/project_flyer.jpeg"
+                alt="EMPOWERHER With NextGenFlow Campaign Flyer"
+                className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+                referrerPolicy="no-referrer"
+              />
+              <div className="absolute bottom-0 inset-x-0 bg-gradient-to-t from-indigo-950/90 via-indigo-950/40 to-transparent p-4 text-white text-xs font-sans text-center">
+                <span className="font-bold text-orange-400 block uppercase font-mono text-[10px] tracking-widest">Major Campaign Flyer</span>
+                EMPOWERHER With NextGenFlow — Delta &amp; Kebbi State, Nigeria
+              </div>
+            </div>
           </div>
 
-          {/* Flyer 2 */}
-          <div className="rounded-2xl overflow-hidden border border-slate-200 shadow-md aspect-[3/4] bg-slate-50 relative group">
-            <FlyerImage baseName="Upcoming 2" alt="Upcoming Project Flyer 2" />
+          {/* Right Column: Project Description */}
+          <div className="lg:col-span-7 space-y-6 text-slate-700 text-sm md:text-base leading-relaxed">
+            {/* Block 1 */}
+            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 space-y-3">
+              <h3 className="font-serif text-xl font-bold text-indigo-950">
+                A period should never put a girl's future on hold
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                For too many girls and young women, menstruation still means missed school, missed opportunities, and quiet shame. The cost of disposable pads, the lack of clean and private facilities, and the silence around menstruation all add up to a barrier that holds girls back month after month.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                At the Girls for Development Goals Foundation, we believe menstrual health is not a luxury — it is a matter of dignity, education, and equality. That is why we are proud to announce our partnership with The Cup Foundation and Lunette to empower 100+ girls and young women in Abraka with sustainable menstrual care and the knowledge to use it with confidence.
+              </p>
+            </div>
+
+            {/* Block 2: What we are doing */}
+            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 space-y-4">
+              <h3 className="font-serif text-xl font-bold text-indigo-950">
+                What we are doing
+              </h3>
+              <p className="text-slate-600">Through this initiative, participants will receive:</p>
+              <ul className="space-y-2 text-slate-700 font-medium pl-1">
+                <li className="flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 mt-2 shrink-0"></span>
+                  <span><strong>A Lunette menstrual cup</strong> — a safe, reusable, medical-grade silicone product</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 mt-2 shrink-0"></span>
+                  <span><strong>Structured menstrual health education</strong> covering the menstrual cycle, hygiene, and myth-busting</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 mt-2 shrink-0"></span>
+                  <span><strong>Hands-on training</strong> on how to use, clean, and care for a cup correctly</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <span className="w-2 h-2 rounded-full bg-orange-500 mt-2 shrink-0"></span>
+                  <span><strong>Ongoing support</strong> so that no girl is left to figure it out alone</span>
+                </li>
+              </ul>
+              <p className="text-slate-600 pt-2 italic text-xs border-t border-slate-200/60">
+                Education comes first. Every girl learns about her body and her options in a respectful, judgment-free space led by trained female facilitators — and the choice to use a cup always remains entirely her own.
+              </p>
+            </div>
+
+            {/* Block 3: Why menstrual cups? */}
+            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 space-y-4">
+              <h3 className="font-serif text-xl font-bold text-indigo-950">
+                Why menstrual cups?
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                A menstrual cup is a small, flexible cup made from medical-grade silicone that collects menstrual flow rather than absorbing it. It can be worn for up to 12 hours at a time and reused cycle after cycle. For girls in low-resource settings, the benefits are life-changing:
+              </p>
+
+              <div className="space-y-3 pt-2">
+                <div className="p-4 bg-white rounded-xl border border-slate-200/80">
+                  <h4 className="font-bold text-indigo-950 text-sm mb-1">One cup. Up to 10 years.</h4>
+                  <p className="text-slate-600 text-xs leading-relaxed">
+                    With proper care, a single menstrual cup can last as long as a decade — replacing thousands of disposable pads and tampons over its lifetime. For a girl and her family, that means real, lasting savings instead of a recurring monthly expense.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-white rounded-xl border border-slate-200/80">
+                  <h4 className="font-bold text-indigo-950 text-sm mb-1">Better for her, better for the planet.</h4>
+                  <p className="text-slate-600 text-xs leading-relaxed">
+                    Disposable pads are made largely of plastic and can take 500 to 800 years to break down. Over a lifetime, one person can use anywhere from 5,000 to 15,000 disposable products. A single menstrual cup can replace 2,000 to 3,000 of those disposables — dramatically cutting the mountain of waste left behind. When you multiply that across 100+ girls, the impact on plastic waste in our community is enormous.
+                  </p>
+                </div>
+
+                <div className="p-4 bg-white rounded-xl border border-slate-200/80">
+                  <h4 className="font-bold text-indigo-950 text-sm mb-1">Confidence and freedom.</h4>
+                  <p className="text-slate-600 text-xs leading-relaxed">
+                    Worn correctly, a cup is comfortable, leak-resistant, and reliable — freeing girls to stay in school, play, study, and live fully, every day of the month.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Block 4: More than products */}
+            <div className="bg-slate-50 border border-slate-200/80 rounded-2xl p-6 space-y-3">
+              <h3 className="font-serif text-xl font-bold text-indigo-950">
+                More than products — a movement
+              </h3>
+              <p className="text-slate-600 leading-relaxed">
+                This programme is about more than handing out cups. It is about breaking the silence around menstruation, equipping girls with accurate knowledge, and nurturing a generation of confident young women who can pass that knowledge on to their peers, sisters, and communities.
+              </p>
+              <p className="text-slate-600 leading-relaxed">
+                By combining education with sustainable products, we are tackling two challenges at once: protecting the health and dignity of girls today, and protecting our environment for tomorrow.
+              </p>
+            </div>
+
+            {/* Block 5: Join us */}
+            <div className="bg-indigo-950 text-white rounded-2xl p-6 space-y-3 shadow-md">
+              <h3 className="font-serif text-xl font-bold text-orange-400">
+                Join us
+              </h3>
+              <p className="text-indigo-100 leading-relaxed">
+                Together with The Cup Foundation and Lunette, we are proving that small changes can spark big impact — for girls, for communities, and for the planet.
+              </p>
+              <p className="text-indigo-200 text-xs pt-2 border-t border-indigo-900/80">
+                To learn more about our work, partner with us, or support menstrual health education in your community, get in touch.
+              </p>
+              <div className="pt-2 font-serif font-bold text-orange-300 text-sm italic">
+                Healthy girls. Empowered futures. A cleaner planet.
+              </div>
+            </div>
           </div>
         </div>
       </section>
